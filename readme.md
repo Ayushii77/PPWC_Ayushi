@@ -32,6 +32,8 @@ int main() {
 
     return 0;
 }
-Output:­
+Output:
+Enter the number:710131
+701030
  
 
