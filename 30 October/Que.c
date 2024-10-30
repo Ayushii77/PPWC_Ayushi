@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 
 
@@ -6,21 +7,16 @@
      char *name;
      int rollno;
      float marks;
-       //struct birthday{
-         //int day;
-         //int month;
-        // int year;
-         //}dob;
- //};
+      
  };
  
   int main(){
-    struct student s2;
-     struct student *ptr=&s2;
+    struct student s1;
+     struct student *p=&s1;
     
     //for taking user input
     //for accessing the attribute of structure we will use dot operator
-   p->name=(struct student*)malloc(30*sizeof(char));
+   p->name=(char*)malloc(30*sizeof(char));
    if(p->name==NULL){
    printf("Memory not allocated \n");
    exit(1);
@@ -33,9 +29,10 @@
    scanf("%f",&p->marks);
    
    printf("Student details\n");
-   printf("name:%s" p->name);
+   printf("name:%s", p->name);
    printf("roll no:%d\n",p->rollno);
    printf("marks:%f\n"p->marks);
    
+   free(p->name);
    return 0;
    }
